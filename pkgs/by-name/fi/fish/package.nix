@@ -160,7 +160,7 @@ let
       #tag = finalAttrs.version;
       # Last commit on the Integration_4.0.0 branch
       rev = "e2a0b0e2b8899f88d2c0073c9e6a1e1381522217";
-      hash = "";
+      hash = "sha256-fewr+RUYti2bO7325uZGDMtuP0VRizUZOoZuSsnaGNc=";
     };
 
     env = {
