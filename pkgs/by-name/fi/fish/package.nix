@@ -159,8 +159,8 @@ let
       # TODO: uncomment and remove rev once the stable version is released
       #tag = finalAttrs.version;
       # Last commit on the Integration_4.0.0 branch
-      rev = "fab273cf4dd6c3242931e2094b107522aa7dde5b";
-      hash = "sha256-CetlEf+S+S4DiozOjzbPuU7z/lixtbHdAanK9kxX62c=";
+      rev = "e2a0b0e2b8899f88d2c0073c9e6a1e1381522217";
+      hash = "";
     };
 
     env = {
