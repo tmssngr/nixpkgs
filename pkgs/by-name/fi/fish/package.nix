@@ -26,6 +26,7 @@
   rustc,
   rustPlatform,
   versionCheckHook,
+  writableTmpDirAsHomeHook,
 
   # used to generate autocompletions from manpages and for configuration editing in the browser
   usePython ? true,
@@ -257,6 +258,8 @@ let
       pkg-config
       rustc
       rustPlatform.cargoSetupHook
+      # Avoid warnings when building the manpages about HOME not being writable
+      writableTmpDirAsHomeHook
     ];
 
     buildInputs = [
@@ -271,11 +274,6 @@ let
       ++ lib.optionals stdenv.hostPlatform.isDarwin [
         "-DMAC_CODESIGN_ID=OFF"
       ];
-
-    preBuild = ''
-      # Avoid warnings when building the manpages about HOME not being writable
-      export HOME=$(mktemp -d)
-    '';
 
     # Fish’s test suite needs to be able to look up process information and send signals.
     sandboxProfile = lib.optionalString stdenv.hostPlatform.isDarwin ''
